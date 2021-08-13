@@ -4,8 +4,6 @@ import AddForm from './components/AddForm';
 import SmurfList from './components/SmurfList';
 import Header from './components/Header';
 
-import axios from 'axios';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 import { connect } from "react-redux";
@@ -15,7 +13,6 @@ import { fetchSmurfs } from './actions/';
 
 class App extends Component {
   componentDidMount() {
-    console.log('in component did mount');
     this.props.fetchSmurfs();
   }
 
