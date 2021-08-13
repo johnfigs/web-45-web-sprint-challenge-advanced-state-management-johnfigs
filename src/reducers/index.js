@@ -13,26 +13,27 @@ const reducer = (state = initialState, action)=>{
                 ...state,
                 isLoading: true
             });
-        // case (FETCH_SUCCESS):
-        //     return ({
-        //         ...state,
-        //         isLoading: false
-        //     });
-        // case (FETCH_FAIL):
-        //     return ({
-        //         ...state,
-        //         isLoading: false
-        //     });
+        case (FETCH_SUCCESS):
+            return ({
+                ...state,
+                smurfs: action.payload,
+                isLoading: false
+            });
+        case (FETCH_FAIL):
+            return ({
+                ...state,
+                isLoading: false
+            });
         // case (ADD_SMURF):
         //     return ({
         //         ...state,
         //         smurfs: [...state.smurfs, {id: Date.now(), name:action.payload.name, nickname: action.payload.nickname, position: action.payload.position, description: action.payload.description}]
         //     });
-        // case (ADD_ERROR):
-        //     return ({
-        //         ...state,
-        //         error: action.payload
-        //     });
+        case (ADD_ERROR):
+            return ({
+                ...state,
+                error: action.payload
+            });
         default: 
             return state
     }
