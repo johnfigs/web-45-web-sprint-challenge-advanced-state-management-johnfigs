@@ -6,17 +6,17 @@ export const FETCH_FAIL = 'FETCH_FAIL';
 export const ADD_SMURF = 'ADD_SMURF';
 export const ADD_ERROR = 'ADD_ERROR';
 
-export const getSmurfs = () => {
+export const fetchSmurfs = () => {
+    console.log('in fetchSmurfs');
     return (dispatch) => {
         dispatch(fetchStart());
         axios.get('http://localhost:3333/smurfs')
-            .then(res=>{
-                //console.log(res);
-                dispatch(fetchSuccess(res));
+            .then(res=>{  
+                dispatch(fetchSuccess(res.data));
             })
             .catch(err=> {
                 dispatch(fetchFail());
-                dispatch(addError(err));
+                dispatch(addError(err.message));
             })
     }
 }

@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import { createStore, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import { Provider } from 'react-redux';
 
 import logger from 'redux-logger';
@@ -17,7 +18,8 @@ worker.start();
 
 const rootElement = document.getElementById("root");
 
-const store = createStore(reducer, applyMiddleware(thunk, logger));
+const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk, logger)));
+console.log("store", store);
 ReactDOM.render(
     <Provider store={store}>
         <App /> 

@@ -53,13 +53,13 @@ In this challenge, you are to build a Smurfs village database utilizing Redux as
 
   * [x] Add a thunk action called fetchSmurfs that triggers a loading status display in our application, performs an axios call to retreive smurfs from our server, saves the result of that call to our state and shows an error if one is made.
   * [x] Add a standard action that allows us to add new smurf (including the name, nickname, position, summary).
-  * [ ] Add a standard action that allows us to set the value of the error message slice of state.
+  * [x] Add a standard action that allows us to set the value of the error message slice of state.
   
 #### App.js
   Connect this component to redux **passing in your fetchSmurfs action only.** 
   
-  * [ ] Connect the fetchSmurfs actions to the App component.
-  * [ ] Call the fetchSmurfs action when the component first loads.
+  * [x] Connect the fetchSmurfs actions to the App component.
+  * [x] Call the fetchSmurfs action when the component first loads.
 
 #### components/SmurfList.js
   Connect this component to redux, **passing in your smurf array and loading status state values.** 
