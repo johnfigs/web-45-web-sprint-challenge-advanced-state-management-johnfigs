@@ -25,9 +25,13 @@ const reducer = (state = initialState, action)=>{
                 isLoading: false
             });
         case (ADD_SMURF):
+            const newSmurf = {
+                ...action.payload,
+                id: Date.now()
+            }
             return ({
                 ...state,
-                smurfs: [...state.smurfs, {id: Date.now(), name:action.payload.name, nickname: action.payload.nickname, position: action.payload.position, description: action.payload.description}]
+                smurfs: [...state.smurfs, newSmurf]
             });
         case (SET_ERROR):
             return ({

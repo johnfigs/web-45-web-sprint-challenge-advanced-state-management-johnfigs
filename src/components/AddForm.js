@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { setError, addSmurf } from '../actions';
 
 const AddForm = (props) => {
-    const { errorMessage, setError } = props;
+    const { errorMessage, setError, addSmurf } = props;
     const [state, setState] = useState({
         name:"",
         position:"",
@@ -22,6 +22,8 @@ const AddForm = (props) => {
         e.preventDefault();
         if (state.name === "" || state.position === "" || state.nickname === "") {
             setError("Name, position and nickname fields are required.");
+        } else {
+            addSmurf(state);
         }
     }
 
